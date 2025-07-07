@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody UserDTO dto) {
         return ResponseEntity.ok(userService.createUser(dto));
     }
@@ -32,7 +32,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getUser(id));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
